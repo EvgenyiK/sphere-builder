@@ -13,7 +13,11 @@ class ADGMA_TestGameMode : public AGameModeBase
 
 public:
 	ADGMA_TestGameMode();
+
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BuildMenu")
+	TSubclassOf<UUserWidget> BuildTowerWidgetClass;
+
+	virtual void BeginPlay() override;	
 };
-
-
-

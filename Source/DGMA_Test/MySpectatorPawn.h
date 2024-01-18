@@ -23,12 +23,13 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	USceneComponent* VisibleComponent;
 
-	UPROPERTY(EditAnywhere, Category="Collision")
-	TEnumAsByte<ECollisionChannel> TraceChannelProperty = ECC_Pawn;
-
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
-
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "TowerMenu")
+	bool OpenMenu = false;
+	
 	void CheckCameraOverlap();
 
 public:

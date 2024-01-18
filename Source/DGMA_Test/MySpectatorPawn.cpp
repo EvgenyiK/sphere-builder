@@ -47,9 +47,9 @@ void AMySpectatorPawn::CheckCameraOverlap()
 		FCollisionResponseParams()))
 	{
 		auto HitActor = HitResult.GetActor()->GetName();
-		if (HitActor == "Floor")
+		if (HitActor == FString("Floor"))
 		{
-			
+			OpenMenu = true;
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *HitResult.GetActor()->GetName())
 	}
