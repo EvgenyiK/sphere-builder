@@ -2,7 +2,7 @@
 
 #include "DGMA_TestGameMode.h"
 #include "UObject/ConstructorHelpers.h"
-#include "BuildTowerWidget.h"
+#include "UI/BuildTowerWidget.h"
 
 
 ADGMA_TestGameMode::ADGMA_TestGameMode()
