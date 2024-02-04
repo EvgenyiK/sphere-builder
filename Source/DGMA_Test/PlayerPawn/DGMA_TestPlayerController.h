@@ -6,8 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "DGMA_TestPlayerController.generated.h"
 
-class UInputMappingContext;
-class UInputAction;
+class UBuildTowerWidget;
 
 /**
  *
@@ -16,15 +15,10 @@ UCLASS()
 class DGMA_TEST_API ADGMA_TestPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-protected:
 
-
-
-
-protected:
-
+public:
 	virtual void BeginPlay() override;
 
-	// End Actor interface
+	UPROPERTY()
+	UBuildTowerWidget* MyBuildTowerInterface;
 };

@@ -18,13 +18,11 @@ AMySpectatorPawn::AMySpectatorPawn()
 void AMySpectatorPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void AMySpectatorPawn::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-
 }
 
 void AMySpectatorPawn::SetupPlayerInputComponent(UInputComponent* UInputComponent)
@@ -41,20 +39,18 @@ void AMySpectatorPawn::CheckCameraOverlap()
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
-	
-	
-	if (GetWorld()->LineTraceSingleByChannel(HitResult,Start,End, ECC_Visibility, Params,
-		FCollisionResponseParams()))
+
+
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, Params,
+	                                         FCollisionResponseParams()))
 	{
 		auto HitActor = HitResult.GetActor()->GetName();
 		if (HitActor == FString("Floor"))
 		{
-			OpenMenu = true;
+			
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *HitResult.GetActor()->GetName())
 	}
 
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 5.f, 0, 5.f);
 }
-
-

@@ -2,7 +2,7 @@
 
 #include "DGMA_TestGameMode.h"
 #include "UObject/ConstructorHelpers.h"
-#include "UI/BuildTowerWidget.h"
+
 
 
 ADGMA_TestGameMode::ADGMA_TestGameMode()
@@ -17,9 +17,6 @@ ADGMA_TestGameMode::ADGMA_TestGameMode()
 void ADGMA_TestGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	auto BuildWidget = CreateWidget<UUserWidget>(GetWorld(), BuildTowerWidgetClass);
-	if (BuildWidget)
-	{
-		BuildWidget->AddToViewport();
-	}
+	
 }
+

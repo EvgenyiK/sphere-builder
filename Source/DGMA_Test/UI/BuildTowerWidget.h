@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/TextBlock.h"
 #include "BuildTowerWidget.generated.h"
 
 /**
@@ -15,6 +16,12 @@ class DGMA_TEST_API UBuildTowerWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "BuildMenu")
-	void OpenMenu();
+	virtual void NativeConstruct() override;
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
+	TSubclassOf<UUserWidget> BuildWidget;
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	bool OpenMenu();
 };
