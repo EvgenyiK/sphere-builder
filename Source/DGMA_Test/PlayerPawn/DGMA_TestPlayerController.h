@@ -18,7 +18,5 @@ class DGMA_TEST_API ADGMA_TestPlayerController : public APlayerController
 
 public:
 	virtual void BeginPlay() override;
-
-	UPROPERTY()
-	UBuildTowerWidget* MyBuildTowerInterface;
+	
 };

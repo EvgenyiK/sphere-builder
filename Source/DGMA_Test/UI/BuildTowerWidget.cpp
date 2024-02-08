@@ -3,20 +3,19 @@
 
 #include "BuildTowerWidget.h"
 
-#include "Blueprint/WidgetTree.h"
-#include "Components/PanelWidget.h"
 
 
-void UBuildTowerWidget::NativeConstruct()
+void UBuildTowerWidget::ShowWidget()
 {
-	Super::NativeConstruct();
-	//bind delegate
-}
-
-bool UBuildTowerWidget::OpenMenu()
-{
-	const auto Controller = GetOwningPlayer();
-	return Controller && Controller->GetStateName() == NAME_Spectating;
+	auto const PlayerBuildWidget = CreateWidget<UUserWidget>(GetWorld(), BuildWidget);
+	if (PlayerBuildWidget)
+	{
+		PlayerBuildWidget->AddToViewport();
+	}else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No create"))
+	}
+	
 }
 
 

@@ -2,8 +2,9 @@
 
 
 #include "MySpectatorPawn.h"
-
+#include "./DGMA_Test/UI/BuildTowerWidget.h"
 #include "Camera/CameraComponent.h"
+
 
 AMySpectatorPawn::AMySpectatorPawn()
 {
@@ -39,6 +40,7 @@ void AMySpectatorPawn::CheckCameraOverlap()
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
+	UBuildTowerWidget* BuildWidget = NewObject<UBuildTowerWidget>();
 
 
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, Params,
@@ -47,7 +49,10 @@ void AMySpectatorPawn::CheckCameraOverlap()
 		auto HitActor = HitResult.GetActor()->GetName();
 		if (HitActor == FString("Floor"))
 		{
-			
+			if (BuildWidget != nullptr)
+			{
+				BuildWidget->ShowWidget();
+			}
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *HitResult.GetActor()->GetName())
 	}
