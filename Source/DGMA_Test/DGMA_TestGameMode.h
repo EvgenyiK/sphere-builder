@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Interfaces/OnlineSessionInterface.h"
 #include "DGMA_TestGameMode.generated.h"
 
 
@@ -20,4 +21,13 @@ protected:
 	TSubclassOf<UUserWidget> BuildTowerWidgetClass;
 
 	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintCallable)
+	void CreateGameSession();
+
+	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
+
+private:
+
+	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate;
 };
