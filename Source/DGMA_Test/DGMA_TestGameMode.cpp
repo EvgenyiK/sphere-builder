@@ -7,12 +7,17 @@
 
 
 ADGMA_TestGameMode::ADGMA_TestGameMode()
-	: Super()
+	: Super(),
+CreateSessionCompleteDelegate(FOnCreateSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnCreateSessionComplete))
 {
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnClassFinder(
 		TEXT("/Game/FirstPerson/Blueprints/BP_PlayerPawn"));
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
+}
+
+void ADGMA_TestGameMode::CreateSession(int32 NumPublicConnections, FString MatchType)
+{
 }
 
 void ADGMA_TestGameMode::BeginPlay()
@@ -33,6 +38,10 @@ void ADGMA_TestGameMode::CreateGameSession()
 {
 	//Called when pressed 1 key
 	
+}
+
+void ADGMA_TestGameMode::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
+{
 }
 
 

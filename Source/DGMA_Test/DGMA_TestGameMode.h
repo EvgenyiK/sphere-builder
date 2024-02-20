@@ -16,6 +16,9 @@ class ADGMA_TestGameMode : public AGameModeBase
 public:
 	ADGMA_TestGameMode();
 
+public:
+	void CreateSession(int32 NumPublicConnections, FString MatchType);
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BuildMenu")
 	TSubclassOf<UUserWidget> BuildTowerWidgetClass;
@@ -30,4 +33,5 @@ protected:
 private:
 
 	FOnCreateSessionCompleteDelegate CreateSessionCompleteDelegate;
+	FDelegateHandle CreateSessionCompleteDelegateHandle;
 };

@@ -17,7 +17,8 @@ class DGMA_TEST_API UBuildTowerWidget : public UUserWidget
 	
 public:
 	void ShowWidget();
-
+	UFUNCTION(BlueprintCallable)
+	void MenuSetup();
 	
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
