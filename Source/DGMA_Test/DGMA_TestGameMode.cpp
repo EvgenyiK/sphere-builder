@@ -23,7 +23,7 @@ void ADGMA_TestGameMode::CreateSession(int32 NumPublicConnections, FString Match
 void ADGMA_TestGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	auto const PlayerBuildWidget = CreateWidget<UUserWidget>(GetWorld(), BuildTowerWidgetClass);
+	/*auto const PlayerBuildWidget = CreateWidget<UUserWidget>(GetWorld(), BuildTowerWidgetClass);
 	if (PlayerBuildWidget)
 	{
 		PlayerBuildWidget->AddToViewport();
@@ -31,7 +31,7 @@ void ADGMA_TestGameMode::BeginPlay()
 	}else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No create"))
-	}
+	}*/
 }
 
 void ADGMA_TestGameMode::CreateGameSession()
