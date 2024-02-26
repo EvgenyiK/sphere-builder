@@ -28,6 +28,7 @@ public class MultiplayerSessions : ModuleRules
 				"Core",
 				"OnlineSubsystem",
 				"OnlineSubsystemSteam",
+				"MultiplayerSessions",
 				"UMG",
 				"Slate",
 				"SlateCore"
