@@ -58,7 +58,7 @@ void UBuildTowerWidget::HostButtonClicked()
 			FString(TEXT("Host Button Clicked."))
 		);
 	}
-
+ 
 	if (MultiplayerSessionsSubsystem)
 	{
 		MultiplayerSessionsSubsystem->CreateSession(NumPublicConnections, MatchType);
