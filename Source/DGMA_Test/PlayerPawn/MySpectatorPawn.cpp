@@ -51,7 +51,7 @@ void AMySpectatorPawn::CheckCameraOverlap()
 		{
 			if (BuildWidget != nullptr)
 			{
-				//BuildWidget->ShowWidget();
+				BuildWidget->ShowWidget();
 			}
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *HitResult.GetActor()->GetName())
