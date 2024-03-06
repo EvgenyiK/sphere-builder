@@ -8,12 +8,13 @@
 
 AMySpectatorPawn::AMySpectatorPawn()
 {
-	VisibleComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisibleComponent"));
-	VisibleComponent->SetupAttachment(GetRootComponent());
-
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(GetRootComponent());
 	FollowCamera->bUsePawnControlRotation = true;
+	
+	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+	Mesh->SetupAttachment(FollowCamera);
+	
 }
 
 void AMySpectatorPawn::BeginPlay()
