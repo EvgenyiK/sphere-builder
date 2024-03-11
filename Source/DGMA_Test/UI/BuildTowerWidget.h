@@ -16,11 +16,12 @@ class DGMA_TEST_API UBuildTowerWidget : public UUserWidget
 
 	
 public:
+
+	UFUNCTION(BlueprintCallable)
 	void ShowWidget();
 
 	
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
-	TSubclassOf<UUserWidget> BuildWidget;
+	virtual void NativeDestruct() override;
 	
 };

@@ -7,15 +7,13 @@
 
 void UBuildTowerWidget::ShowWidget()
 {
-	auto const PlayerBuildWidget = CreateWidget<UUserWidget>(GetWorld(), BuildWidget);
-	if (PlayerBuildWidget)
-	{
-		PlayerBuildWidget->AddToViewport();
-	}else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("No create"))
-	}
-	
+	SetDisplayLabel("Create");
+}
+
+void UBuildTowerWidget::NativeDestruct()
+{
+	RemoveFromParent();
+	Super::NativeDestruct();
 }
 
 

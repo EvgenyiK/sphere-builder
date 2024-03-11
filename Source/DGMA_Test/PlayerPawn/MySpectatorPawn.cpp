@@ -2,8 +2,9 @@
 
 
 #include "MySpectatorPawn.h"
-#include "./DGMA_Test/UI/BuildTowerWidget.h"
 #include "Camera/CameraComponent.h"
+#include "Components/WidgetComponent.h"
+#include "DGMA_Test/UI/BuildTowerWidget.h"
 
 
 AMySpectatorPawn::AMySpectatorPawn()
@@ -14,6 +15,8 @@ AMySpectatorPawn::AMySpectatorPawn()
 	
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(FollowCamera);
+
+	BuildWidget = CreateDefaultSubobject<UBuildTowerWidget>(TEXT("OverHeadWidget"));
 	
 }
 
@@ -41,8 +44,7 @@ void AMySpectatorPawn::CheckCameraOverlap()
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
-	UBuildTowerWidget* BuildWidget = NewObject<UBuildTowerWidget>();
-
+	
 
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, Params,
 	                                         FCollisionResponseParams()))

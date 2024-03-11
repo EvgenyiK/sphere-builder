@@ -25,6 +25,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Build)
+	class UBuildTowerWidget* BuildWidget;
 	
 	void CheckCameraOverlap();
 
@@ -34,5 +36,7 @@ public:
 	virtual void SetupPlayerInputComponent(UInputComponent* UInputComponent) override;
 
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+private:
 	
 };
