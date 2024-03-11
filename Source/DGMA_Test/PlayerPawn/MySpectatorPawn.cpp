@@ -12,12 +12,11 @@ AMySpectatorPawn::AMySpectatorPawn()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(GetRootComponent());
 	FollowCamera->bUsePawnControlRotation = true;
-	
+
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(FollowCamera);
 
 	BuildWidget = CreateDefaultSubobject<UBuildTowerWidget>(TEXT("OverHeadWidget"));
-	
 }
 
 void AMySpectatorPawn::BeginPlay()
@@ -44,7 +43,7 @@ void AMySpectatorPawn::CheckCameraOverlap()
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
-	
+
 
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, Params,
 	                                         FCollisionResponseParams()))

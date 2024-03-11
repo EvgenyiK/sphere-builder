@@ -14,14 +14,10 @@ class DGMA_TEST_API UBuildTowerWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
-	
 public:
-
 	UFUNCTION(BlueprintCallable)
 	void ShowWidget();
 
-	
 protected:
 	virtual void NativeDestruct() override;
-	
 };

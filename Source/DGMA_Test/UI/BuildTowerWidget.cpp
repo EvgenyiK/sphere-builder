@@ -4,7 +4,6 @@
 #include "BuildTowerWidget.h"
 
 
-
 void UBuildTowerWidget::ShowWidget()
 {
 	SetDisplayLabel("Create");
@@ -15,5 +14,3 @@ void UBuildTowerWidget::NativeDestruct()
 	RemoveFromParent();
 	Super::NativeDestruct();
 }
-
-
